@@ -1,0 +1,1226 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <help_text>// Uncomment the following line to change the fontsize and font:
+fontsize=10
+// fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Welcome to UMLet!
+//
+// Double-click on elements to add them to the diagram, or to copy them
+// Edit elements by modifying the text in this panel
+// Hold Ctrl to select multiple elements
+// Use Ctrl+mouse to select via lasso
+//
+// Use +/- or Ctrl+mouse wheel to zoom
+// Drag a whole relation at its central square icon
+//
+// Press Ctrl+C to copy the whole diagram to the system clipboard (then just paste it to, eg, Word)
+// Edit the files in the "palettes" directory to create your own element palettes
+//
+// Select "Custom Elements &gt; New..." to create new element types
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// This text will be stored with each diagram;  use it for notes.</help_text>
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>18</x>
+      <y>144</y>
+      <w>189</w>
+      <h>207</h>
+    </coordinates>
+    <panel_attributes>bg=orange
+Player
+--
++ direction : int
++ AnimationFrame : int
++ movement : bool
++ standing : bool
++ inJump : bool
++ ifThrowing : bool
++ PlayerVelocity : int
++ jumpDistance : int
+- mVelX : int
+- mVelY : float
+- health : int
+- milk_quantity : int
+- strengths : int
+- HealthBar*
+- QuantityBar*
+- StrengthBar*
+- SDL_Rect
+- SDL_Rect
+- SDL_Rect
+- SDL_Rect
+- SDL_Rect
+- SDL_Rect
+- SDL_Rect
+--
++ Player()
++ ~Player()
++ Jump(): void 
++ Attack(): void
++ GetAlive() : bool
++ SetAlive(bool): void
++ GetHealth() : int
++ SetHealth(int): void
++ GetQuantity() : int
++ SetQuantity(int): void
++ MoveRight() : void
++ MoveLeft() : void
+
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>693</x>
+      <y>585</y>
+      <w>189</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>bg=orange
+Powerups
+--
+# scroll : float
+--
++ Powerups(Ltexture*, float, float)
++ ~ Powerups()
++ GetType(): int
++ SetScroll(float) : void
++ Render(long int&amp;, SDL_Renderer*)
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>513</x>
+      <y>99</y>
+      <w>189</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>bg=pink
+/Brick/
+--
++ Brick(Ltexture, float, float)
++ GetStrType : string
++ SetScroll(float) : void
+/+ Render(long int&amp;, SDL_Renderer*) : void/
+--
+# scroll : float
+# type : string
++ ~ Brick()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>963</x>
+      <y>162</y>
+      <w>189</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>bg=pink
+Enemy
+--
+direction : int 
+--
+- health : int
+--
++ Enemy(Ltexture*, float, float,float,float)
++ ~ Enemey()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>648</x>
+      <y>306</y>
+      <w>189</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>bg=pink
+StandardBrick
+--
++ StandardBrick(Ltexture*, float, float)
++ Render(long int&amp;, SDL_Renderer*) : void
++ ~ StandardBrick()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>738</x>
+      <y>0</y>
+      <w>189</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>bg=pink
+BreakBrick
+--
+BreakBrick(Ltexture*, float, float)
++ Break() : void
++ Render(long int&amp;, SDL_Renderer*) : void
++ ~ BreakBrick()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>207</y>
+      <w>90</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0;80.0;70.0;80.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1170</x>
+      <y>252</y>
+      <w>189</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>bg=pink
+CleverEnemies
+--
+- SDL_Rect
+- SDL_Rect
+- SDL_Rect
+- ifThrowing : bool
+--
++ CleverEnemy(Ltexture*, float, float,float,float)
++ Render(long int&amp;,SDL_Renderer) : void
++ Move(int) : void
++ AladdinTracker(float,float)
++ ~ CleverEnemy()
++Track(int, int)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>945</x>
+      <y>270</y>
+      <w>198</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>bg=pink
+NormalEnemy
+--
++ NormalEnemy(Ltexture*, float, float,float,float)
++ ~ NormalEnemy()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1143</x>
+      <y>198</y>
+      <w>99</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0;90.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1044</x>
+      <y>234</y>
+      <w>27</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>612</x>
+      <y>855</y>
+      <w>189</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>bg=orange
+MilkGlassPowerup
+--
++ MilkGlassPowerup( Ltexture*, float, float)
++ ~ MilkGlassPowerup()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>756</x>
+      <y>657</y>
+      <w>27</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>216</x>
+      <y>270</y>
+      <w>189</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>bg=orange
+playerStrength
+--
+- strengthTimer : int 
+--
++ playerStrength()
++ ~playerStrength()
++ drawingBar(Ltexture*,float,float)
++ strengthMode():void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>18</x>
+      <y>369</y>
+      <w>189</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>bg=orange
+/BarClass/
+--
+# SDL_Rect
+# LTexture*
+--
++ BarClass()
++ BarClass(LTexture*, LTexture*)
+/+ Render(long int&amp;, SDL_Renderer*) : void/ 
++ ~ BarClass()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>18</x>
+      <y>450</y>
+      <w>189</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>bg=orange
+HealthBar
+--
+- health: int
+--
++ HealthBar()
++ ~HealthBar()
++ DrawingBar(Ltexture*,float,float)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>225</x>
+      <y>450</y>
+      <w>189</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>bg=orange
+QuantityBar
+--
+- LTexture*
+--
+
++ QuantityBar()
++ QuantityBar(LTexture*,float,float)
++ Operator = (cons) : void
++ Render(long int&amp;, SDL_Renderer*)
++ QuantityBar()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>99</x>
+      <y>432</y>
+      <w>27</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>198</x>
+      <y>405</y>
+      <w>144</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;10.0;140.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>90</x>
+      <y>342</y>
+      <w>27</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>198</x>
+      <y>351</y>
+      <w>144</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;50.0;140.0;50.0;140.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>27</x>
+      <y>774</y>
+      <w>189</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>bg=blue
+GameOverScreen
+--
++ GameOverScreen(Ltexture*, LTexture, LTexture)
++ ~ GameOverScreen()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>279</x>
+      <y>864</y>
+      <w>189</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>bg=blue
+MenuScreen
+--
+- LTexture*
+- LTexture*
+- Button*
+- button_count : int
+--
++ MenuScreen(Ltexture*,Ltexture*, Ltexture*)
++ ~ MainMenuScreen()
++ Render(long int&amp;, SDL_Renderer)
++ Button*
++ GetButtonCount() : int
++ ChangeButton(int, int) : void
++ MouseMotion(int,int) : void
++ MouseClick(int,int) : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>252</x>
+      <y>693</y>
+      <w>189</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>bg=blue
+Screen
+--
+# LTexture*
+--
++ Screen()
++ Screen(Ltexture*)
++ ~Screen()
++ Renderer(SDL_Renderer*) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>225</x>
+      <y>585</y>
+      <w>189</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>bg=blue
+SplashScreen
+--
++ SplashScreen(Ltexture*)
++ ~ splashScreen()
++ Render(long int&amp;,SDL_Renderer) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>135</x>
+      <y>720</y>
+      <w>135</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>130.0;10.0;100.0;10.0;100.0;50.0;10.0;50.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>423</x>
+      <y>630</y>
+      <w>189</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>bg=blue
+PauseQuitScreen
+--
++ PauseQuitScreen(Ltexture*, Ltexture*)
++ ~ PauseQuitScreen()
++ Render(long int&amp;, SDL_Rendere*)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>657</y>
+      <w>81</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;40.0;10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>315</x>
+      <y>630</y>
+      <w>27</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>369</x>
+      <y>738</y>
+      <w>27</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>432</x>
+      <y>234</y>
+      <w>189</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>LTexture
+--
+- SDL_Texture*
+- width : int
+- height : int
+--
++ LTexture()
++ ~ Ltexture()
++ SetBlendMode(SDL_BlendMode) : void
++ SetAlpha(Uint8) : void
++ LoadFromFile(string, SDL_Renderer, bool, Uint8, Uint8, Uint8) : bool
++ RenderTexture(int, int, SDL_Renderer, SDL_Rect, double, SDL_Point*, float) : void
++ Free() : void
++ GetWidth() : int
++ GetHeight(): int
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>468</x>
+      <y>405</y>
+      <w>189</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>/Object/
+--
++ direction : int
+# image : LTexture*
+# type : int
+# x : float
+# y :float
+# WorldX : float
+# WorldY : float
+# colRectWidth : float
+# colrRectHeight : float
+# health : float
+# damageCaused : float
+# alive : bool
+# AnimationFrame : int
+# mVelX : int
+--
++ Object( LTexture*, float, float,float,float)
++ ~Object()
+/+ handleEvent(SDL_Event&amp;): void/
+/+ AladdinTracker(float,float) : void/
+/+ GetType(): int/
+/+ SetAlive(bool) : void/
+/+ isAlive() : bool/
+/+ Render(long int&amp;,SDL_Renderer*) = 0 : void/
+/+ GetX() : float/
+/+ GetY() : float/
+/+ GetPosX() : float/
+/+ GetPosY() : float/
+/+ GetWorldX() : float/
+/+ GetWorldY() : float/
+/+ GetFrameWidth() : float/
+/+ GetFrameHeight() : float/
+/+ Move(int) : int/
+/+ GetDamageCaused() : float/
+/+ takeDamage(float) : void/
++ GetTexture() : LTexture
+
+
++ Update() : void
++ Render(SDL* Renderer*) : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>522</x>
+      <y>378</y>
+      <w>27</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>198</x>
+      <y>414</y>
+      <w>288</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>300.0;50.0;270.0;50.0;270.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>621</x>
+      <y>207</y>
+      <w>27</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;220.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>198</x>
+      <y>180</y>
+      <w>288</w>
+      <h>279</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>300.0;290.0;240.0;290.0;240.0;80.0;60.0;80.0;60.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>648</x>
+      <y>486</y>
+      <w>135</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;10.0;130.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>648</x>
+      <y>189</y>
+      <w>333</w>
+      <h>279</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;290.0;320.0;290.0;320.0;10.0;350.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1071</x>
+      <y>459</y>
+      <w>189</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>bg=pink
+Gutter
+--
++ Gutter()
++ Gutter( Ltexture*, float, float)
++ Render(long int&amp;, SDL_Renderer*) : void
++ ~ Gutter()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>954</x>
+      <y>342</y>
+      <w>189</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>bg=pink
+Paan
+--
++ Paan()
++ Paan( Ltexture*, float, float)
++ Render(long int&amp;, SDL_Renderer*) : void
++ ~ Paan()
++ Slip() : void in PLayer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>819</x>
+      <y>459</y>
+      <w>189</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>bg=pink
+/Traps/
+--
++ Traps()
++ Traps( Ltexture*, float, float)
+/+ Renderer(long int&amp;, SDL Renderer*) : void/
++ GetStrType : str
++ SetScroll : void
++ ~ Traps()
+--
+# type : string
+# scroll : float</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>648</x>
+      <y>459</y>
+      <w>189</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;190.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>999</x>
+      <y>396</y>
+      <w>63</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;90.0;50.0;90.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>999</x>
+      <y>495</y>
+      <w>90</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>504</x>
+      <y>927</y>
+      <w>189</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>bg=orange
+StrengthPowerup
+--
++ StrengthPowerup( Ltexture*, float, float)
++ ~ StrengthsPowerup()
++ Render(long int&amp;,SDL_Renderer)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>504</x>
+      <y>981</y>
+      <w>189</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>bg=orange
+HealthPowerup
+--
++ HealthPowerup( Ltexture*, float, float)
++ ~ HealthPowerup()
++ Render(long int&amp;, SDL_Renderer*)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>684</x>
+      <y>900</y>
+      <w>72</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>60.0;10.0;60.0;130.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>684</x>
+      <y>900</y>
+      <w>54</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>40.0;10.0;40.0;60.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1296</x>
+      <y>342</y>
+      <w>189</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>Node 
+--
++ prev : Node&lt;T&gt;*
++ next : Node&lt;T&gt;*
++ data :T
+~ Node&lt;T&gt;()
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1278</x>
+      <y>432</y>
+      <w>189</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>_LinkedList_
+--
+- head : Node&lt;T&gt;*
+- tail : Node&lt;T&gt;*
+- length : int
+- VisibleWorldX : float
+- VisibleWorldY : float
+--
++ LinkedList();
++ ~ LinkedList();
++ Push(T data) : void
++ Pop(): T
++ isEmpty() : bool
++ CleanAll : void
++ Move(int) : void
++ AladdinTracker() : void
++ Render(long int&amp;,SDL_Renderer*) : void
++ CheckCollision() : void
++ IsInsideVisibleWorld(float,float,float,float) : bool
++ Collide(Object*,Object*) : void
++ hit(Object*, Object*)
++ GetLength();
++
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>729</x>
+      <y>144</y>
+      <w>189</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>bg=pink
+MovingBrick
+--
+MovingBrick(Ltexture*, float, float)
++ Render(long int&amp;, SDL_Renderer*) : void
++ Move : void
+Move() : void
++ ~ MovingBrick()
+--
+- vel : const int
+- maxi : bool
+- moving : into
+- maxim : int
+- minum : int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>657</x>
+      <y>207</y>
+      <w>90</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;80.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>702</x>
+      <y>378</y>
+      <w>189</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>bg=pink
+MilkBag
+--
++ MilkBag( Ltexture*, float, float)
++ ~ Milk Bag()
++ Motion(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>567</x>
+      <y>396</y>
+      <w>153</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;10.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>18</x>
+      <y>837</y>
+      <w>189</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>bg=blue
+GameScreen
+--
+- LTexture*
+- LTexture*
+--
++ GameScreen(Ltexture*, LTexture*, LTexture*, LTexture*)
++ Render(long int&amp;,float&amp;,float&amp;,float&amp;,float&amp;,SDL_Renderer)
++ ~ GameScreen()
++ Renderer()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>198</x>
+      <y>738</y>
+      <w>72</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>60.0;10.0;60.0;130.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>441</x>
+      <y>702</y>
+      <w>189</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>bg=blue
+Button
+--
+- Word*
+- width : int
+- height : int
+- type : int
+- x : float
+- y : float
+- state : float
+- text : string
+- SDL_Rect
+- LTexture*
+- LTexture*
+--
++ Button()
++ Button(LTexture*, LTexture*,float,float,string,int)
++ Init(LTexture*, LTexture*,float,float,string,int)
++ Render(long int&amp;,SDL_Renderer*)
++ GetWidth() : int
++ GetHeight() : int
++ GetX() : float
++ GetY() : float
++ ChangeState(int) : void
++ GetText() : string
++ GetState() : int
++ ~ Button()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1368</x>
+      <y>378</y>
+      <w>27</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>648</x>
+      <y>360</y>
+      <w>666</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;140.0;110.0;140.0;110.0;110.0;290.0;90.0;290.0;70.0;610.0;80.0;610.0;10.0;720.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>414</x>
+      <y>162</y>
+      <w>117</w>
+      <h>342</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>60.0;360.0;10.0;360.0;10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>621</x>
+      <y>612</y>
+      <w>54</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0;40.0;80.0;40.0;130.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>945</y>
+      <w>189</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>bg=blue
+Character
+--
+- x: int
+- y: int
+- width : int
+- height : int
+- SDL_Rect
+- LTexture
+- ascii : int
+--
++ Character ();
++ Character (LTexture*,float,float,int)
++ Render(long int&amp;,SDL_Renderer*)
++ Operator = (const) : void
++ ~ Character()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>306</x>
+      <y>1008</y>
+      <w>189</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>bg=blue
+Word
+--
+- x : int
+- y : int
+- text : string
+- word_len : int
+- width : int
+- height : int
+- Ltexture*
+- Character*
+--
++ Word()
++ Word(string,LTexture*,float,float)
++ ~Word()
++ Render(long int&amp;, SDL_Renderer*) : void
++ GetLength(): int
++ GetWidth() : int
++ ChangerWord(string): void
++ GetText() : string </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>450</x>
+      <y>846</y>
+      <w>81</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>180</x>
+      <y>981</y>
+      <w>144</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>140.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>693</x>
+      <y>72</y>
+      <w>63</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;130.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1044</x>
+      <y>576</y>
+      <w>189</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>Knives
+--
+- SDL_Rect
+- SDL_Rect
+--
++ Knives(LTexture*,float,float,float,float)
++ ~ Knives()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>900</x>
+      <y>666</y>
+      <w>189</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>Barrells
+--
+- SDL_Rect
+- SDL_Rect
+--
++ Barrells(LTexture*,float,float,float,float)
++ ~Barrells()
+
+id: Long="36548"
+[waiting for message]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>585</x>
+      <y>198</y>
+      <w>153</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;100.0;150.0;100.0;150.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>648</x>
+      <y>504</y>
+      <w>351</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;10.0;170.0;80.0;370.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>657</x>
+      <y>522</y>
+      <w>405</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;160.0;10.0;180.0;80.0;430.0;100.0</additional_attributes>
+  </element>
+</diagram>
